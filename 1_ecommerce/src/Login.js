@@ -1,21 +1,21 @@
 import React, {useState} from 'react'
 import './login.css'
-import {Link, useHistory} from "react-router-dom"
-import StorefrontIcon from '@material-ui/icons/Storefront';
+import {Link, useNavigate} from "react-router-dom"
+import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
 
-import {auth} from "./firebase";
+import { auth } from "./firebase";
 
 function Login() {
-    const history = useHistory()
+    const history = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const signIn = e => {
-        e.preventDefault()
+const signIn = e => {
+    e.preventDefault()
 
-        auth
-            .signInWithEmailAndPassword(email, password)
-            .then(auth => {
+    auth
+        .signInWithEmailAndPassword(email, password)
+        .then((auth) => {
                 history.push('/')
             })
             .catch(error => alert(error.message))
@@ -32,12 +32,13 @@ const register = e => {
                 history.push('/')
             }
         }).catch(error => alert(error.message))
+    }
 
         return (
             <div className='login'>
                 <Link to='/' style={{textDecoration:"none"}}>
                     <div className="login__logo">
-                        <StorefrontIcon className="login__logoImage" fontSize="large"/>
+                        <StoreMallDirectoryIcon className="login__logoImage" fontSize="large"/>
                         <h2 className='"login__logoTitle'>eShop</h2>
                     </div>
                 </Link>
@@ -70,7 +71,7 @@ const register = e => {
         
 
 }
-}
+
 
 export default Login
 

@@ -1,4 +1,4 @@
-import {SportsBasketball} from "@material-ui/icons"
+import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
 import React, { useState } from "react"
 import "./checkout.css"
 import CheckoutProduct from "./CheckoutProduct"

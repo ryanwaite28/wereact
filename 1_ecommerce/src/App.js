@@ -12,25 +12,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Routes>
-        <Route path="/login">
-          <Login/>
-        </Route>
+      <Header />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
 
-        <Route path="/checkout">
-          <Checkout/>
-        </Route>
-
-        <Route path="/">
-          <Home/>
-        </Route>
-
-
-      </Routes>
+        
       </Router>
-
-      <Header /> 
-      <Home />
     </div>
   );
 }
