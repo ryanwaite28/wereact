@@ -1,12 +1,23 @@
+/* Default styles for larger screens */
 .checkout {
     display: flex;
     padding: 20px;
     background-color: white;
     height: max-content;
+    position: relative; /* Add relative positioning to the parent container */
 }
 
-.checkout__ad {
+.checkout__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width:75%;
+    flex: 1; /* Make the left side take up remaining space */
+}
+
+.checkout__left img {
     width: 100%;
+    object-fit: contain;
     margin-bottom: 10px;
 }
 
@@ -16,7 +27,25 @@
     border-bottom: 1px solid lightgray;
 }
 
-.checkout__left {
-    display: flex;
-    flex-direction: column;
+.checkout__right {
+    position: sticky;
+    top: 20px; /* Adjust the distance from the top as needed */
+    flex: 0 0 300px; /* Set a fixed width for the right side */
+}
+
+/* Media query for medium-sized screens */
+@media (max-width: 1024px) {
+    .checkout {
+        flex-direction: column;
+    }
+
+    .checkout__left img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .checkout__right {
+        position: static; /* Remove sticky positioning on smaller screens */
+        flex: 1; /* Allow the right side to take full width */
+    }
 }

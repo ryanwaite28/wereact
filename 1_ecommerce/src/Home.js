@@ -10,41 +10,41 @@ function Home() {
                         <div className="home__row">
                             <Product 
                             id="12345678"
-                            title="laptop bag"
+                            title="lambo"
                             price={11.96}
                             rating={5}
                             image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>
                             <Product 
-                            id="12345678"
-                            title="laptop bag"
-                            price={11.96}
-                            rating={5}
-                            image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>
-                        </div>
-                        <div className="home__row">
-                            <Product 
-                            id="12345678"
-                            title="laptop bag"
-                            price={11.96}
-                            rating={5}
-                            image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>
-                            <Product 
-                            id="12345678"
-                            title="laptop bag"
+                            id="44232"
+                            title="Gucci Built"
                             price={11.96}
                             rating={5}
                             image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>
                         </div>
                         <div className="home__row">
                             <Product 
-                            id="12345678"
-                            title="laptop bag"
+                            id="4234234"
+                            title="Flip Flops"
                             price={11.96}
                             rating={5}
                             image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>
                             <Product 
-                            id="12345678"
-                            title="laptop bag"
+                            id="5234234"
+                            title="Dogfood"
+                            price={11.96}
+                            rating={5}
+                            image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>
+                        </div>
+                        <div className="home__row">
+                            <Product 
+                            id="23423423"
+                            title="Camaro Door"
+                            price={11.96}
+                            rating={5}
+                            image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>
+                            <Product 
+                            id="52354234"
+                            title="venza hood"
                             price={11.96}
                             rating={5}
                             image="https://images-na.ssl-images-amazon.com/images/I/71mEsHyzSCL._SL1000_.jpg"/>

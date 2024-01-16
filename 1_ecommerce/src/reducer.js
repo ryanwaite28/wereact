@@ -3,7 +3,7 @@
 import { red } from "@mui/material/colors"
 
 export const initialState = {
-    basekt: [],
+    basket: [],
 }
 
 //Selector

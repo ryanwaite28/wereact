@@ -5,7 +5,7 @@
 }
 
 .checkoutProduct__info {
-    padding-left: 20px
+    padding-left: 20px;
 }
 
 .checkoutProduct__info > button {
@@ -20,13 +20,30 @@
     object-fit: contain;
     width: 180px;
     height: 180px;
-  }
+}
 
 .checkoutProduct__rating {
     display: flex;
-  }
+}
 
 .checkoutProduct__title {
     font-size: 17px;
     font-weight: 800;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .checkoutProduct {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .checkoutProduct__info {
+        padding-left: 0; /* Remove left padding on smaller screens */
+        margin-top: 10px; /* Add some space between image and info */
+    }
+
+    .checkoutProduct__image {
+        width: 100%; /* Make the image fill the container on smaller screens */
+        height: auto;
+    }
 }

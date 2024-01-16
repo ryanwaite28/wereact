@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
-
 import { auth } from './firebase';
 
 function Login() {
@@ -13,8 +12,13 @@ function Login() {
   const signIn = (e) => {
     e.preventDefault();
 
-    auth
-      .signInWithEmailAndPassword(email, password)
+    // Basic validation
+    if (!email || !password) {
+      alert('Please provide both email and password.');
+      return;
+    }
+
+    auth.signInWithEmailAndPassword(email, password)
       .then(() => {
         history.push('/');
       })
@@ -23,6 +27,12 @@ function Login() {
 
   const register = (e) => {
     e.preventDefault();
+
+    // Basic validation
+    if (!email || !password) {
+      alert('Please provide both email and password.');
+      return;
+    }
 
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -46,10 +56,20 @@ function Login() {
 
         <form>
           <h5>E-mail</h5>
-          <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input
+            type='text'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
           <h5>Password</h5>
-          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input
+            type='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
           <button type='submit' className='login__signInButton' onClick={signIn}>
             Sign In
