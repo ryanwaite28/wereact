@@ -1,8 +1,9 @@
+// Login.js
 import React, { useState } from 'react';
-import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
 import { auth } from './firebase';
+import './login.css'
 
 function Login() {
   const history = useNavigate();
@@ -18,7 +19,8 @@ function Login() {
       return;
     }
 
-    auth.signInWithEmailAndPassword(email, password)
+    auth
+      .signInWithEmailAndPassword(email, password)
       .then(() => {
         history.push('/');
       })
