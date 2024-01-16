@@ -1,7 +1,7 @@
 import {SportsBasketball} from "@material-ui/icons"
 import React, { useState } from "react"
 import "./checkout.css"
-import CheckoutProduct from "./Checkoutproduct"
+import CheckoutProduct from "./CheckoutProduct"
 import Subtotal from "./Subtotal.js";
 import {useStateValue} from "./StateProvider"
 
