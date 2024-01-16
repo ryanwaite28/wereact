@@ -4,7 +4,7 @@ We are relearning react one project at a time, I'll have descriptions of everyth
 
 # # Amazon clone - Project 1
 
-day - 1 
+Day - 1 
         Built and styled the header componet ! 
 
 Day - 2 -
