@@ -7,5 +7,10 @@ We are relearning react one project at a time, I'll have descriptions of everyth
 day - 1 
         Built and styled the header componet ! 
 
-Summary -
-        we will be building a replica of the amazon website
+Day - 2 -
+        Built most componets
+
+Day - 3 
+        Finished and deployed the app
+
+[Live Link](https://eshop-96427.firebaseapp.com/)
