@@ -13,4 +13,4 @@ Day - 2 -
 Day - 3 
         Finished and deployed the app
 
-[Live Link](https://eshop-96427.firebaseapp.com/)
+[Live Link](https://eshop-96427.web.app/)
