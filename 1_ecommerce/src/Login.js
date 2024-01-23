@@ -1,9 +1,8 @@
-// Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
-import { auth } from './firebase';
-import './login.css'
+import { auth, db } from './firebase'; // Assuming you have a 'database' reference in your 'firebase.js'
+import './login.css';
 
 function Login() {
   const history = useNavigate();
@@ -36,12 +35,24 @@ function Login() {
       return;
     }
 
+    // Register the user
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then(() => {
+      .then((userCredential) => {
+        // Save additional user data to the database
+        saveUserDataToDatabase(userCredential.user.uid, email);
         history.push('/');
       })
       .catch((error) => alert(error.message));
+  };
+
+  const saveUserDataToDatabase = (userId, email, name) => {
+    // Save user data to the database
+    db.ref(`users/${userId}`).set({
+      email: email,
+      name: name,
+      // Add other user data as needed
+    });
   };
 
   return (
