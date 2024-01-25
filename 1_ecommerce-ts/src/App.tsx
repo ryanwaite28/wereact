@@ -1,6 +1,6 @@
 import './App.css';
 import './header.css'
-import Header from "./Header"
+import Header from "./header"
 import Home from "./Home"
 import Checkout from "./Checkout"
 import Login from "./Login"

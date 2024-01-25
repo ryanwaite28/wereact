@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
-// import { auth, db } from './firebase'; // Assuming you have a 'database' reference in your 'firebase.js'
-import { auth, db } from './firebase';
+import { auth, db } from './firebase'; // Assuming you have a 'database' reference in your 'firebase.js'
+// import { auth as FbAuth, db as FbDb } from './firebase';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from 'firebase/auth';
+import {
+  doc,
+  setDoc
+} from 'firebase/firestore';
 import './login.css';
 
 function Login() {
-  const history = useNavigate();
+  const history = useNavigate() as any;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const signIn = (e) => {
+  // const auth = FbAuth as any;
+  // const db = FbDb as any;
+
+
+
+  const signIn = (e: any) => {
     e.preventDefault();
 
     // Basic validation
@@ -19,15 +32,25 @@ function Login() {
       return;
     }
 
-    auth
-      .signInWithEmailAndPassword(email, password)
+    
+    signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         history.push('/');
       })
-      .catch((error) => alert(error.message));
+      .catch((error: any) => alert(error.message));
   };
 
-  const register = (e) => {
+  const saveUserDataToDatabase = (userId: any, email: any, name?: any) => {
+    // Save user data to the database
+    return setDoc(doc(db, 'users', `${userId}`), {
+      id: userId,
+      email: email,
+      name: name,
+      // Add other user data as needed
+    });
+  };
+
+  const register = (e: any) => {
     e.preventDefault();
 
     // Basic validation
@@ -37,24 +60,16 @@ function Login() {
     }
 
     // Register the user
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential: any) => {
         // Save additional user data to the database
         saveUserDataToDatabase(userCredential.user.uid, email);
         history.push('/');
       })
-      .catch((error) => alert(error.message));
+      .catch((error: any) => alert(error.message));
   };
 
-  const saveUserDataToDatabase = (userId, email, name) => {
-    // Save user data to the database
-    db.ref(`users/${userId}`).set({
-      email: email,
-      name: name,
-      // Add other user data as needed
-    });
-  };
+  
 
   return (
     <div className='login'>
